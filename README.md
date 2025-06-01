@@ -115,4 +115,14 @@ insulation_table2 = insulation(clr2, windows, verbose=True)
 ```
 
 ## h. сравните результаты и постройте графики полученных кривых; отобразите на них границы ТАДов
+### Графики `insulation score`
+|  4DNFIQWCSCVX | 4DNFISBF7WSJ  |
+|---|---|
+| ![](https://github.com/akamaaru/hse25_hw4/blob/main/img/4DNFIQWCSCVX/insulation.png) | ![](https://github.com/akamaaru/hse25_hw4/blob/main/img/4DNFISBF7WSJ/insulation.png) |
+
+### Графики `boundaries`
+|  4DNFIQWCSCVX | 4DNFISBF7WSJ  |
+|---|---|
+| ![](https://github.com/akamaaru/hse25_hw4/blob/main/img/4DNFIQWCSCVX/boundaries.png) | ![](https://github.com/akamaaru/hse25_hw4/blob/main/img/4DNFISBF7WSJ/boundaries.png) |
+
 ## i. создайте 2 bed файла с границами ТАДов; в поле score добавьте силу границы
