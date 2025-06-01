@@ -44,7 +44,7 @@ m2 = clr2.matrix(as_pixels=True, balance=True).fetch(region)
 ```
 
 ## c. получить таблицу с координатами и контактами; они сбалансированные или нет?
-Полученные таблицы сбалансированы. Изобразим их на тепловой карте:
+Полученные таблицы сбалансированы, так как значения в них нормализованы. Изобразим их на тепловой карте:
 
 |  4DNFIQWCSCVX | 4DNFISBF7WSJ  |
 |---|---|
@@ -120,10 +120,21 @@ insulation_table2 = insulation(clr2, windows, verbose=True)
 |---|---|
 | ![](https://github.com/akamaaru/hse25_hw4/blob/main/img/4DNFIQWCSCVX/insulation.png) | ![](https://github.com/akamaaru/hse25_hw4/blob/main/img/4DNFISBF7WSJ/insulation.png) |
 
+В файле `4DNFIQWCSCVX` наблюдается более яркое основание (примерно 80^-1 в сравнении с 100^-1), что указывает на более высокую частоту контактов. 
+Наиболее сильные контакты наблюдаются на 20.32 Мб.
+
+В файле `4DNFISBF7WSJ` наиболее сильные контакты наблюдаются на промежутке с 20 до 20.25 Мб.
+
 ### Графики `boundaries`
 |  4DNFIQWCSCVX | 4DNFISBF7WSJ  |
 |---|---|
 | ![](https://github.com/akamaaru/hse25_hw4/blob/main/img/4DNFIQWCSCVX/boundaries.png) | ![](https://github.com/akamaaru/hse25_hw4/blob/main/img/4DNFISBF7WSJ/boundaries.png) |
+
+По форме оба графика очень похожи. 
+
+Пик распределения силы границы у `4DNFIQWCSCVX` немного левее, а у `4DNFISBF7WSJ` -- правее.
+
+Ещё можно отметить интенсивность пиков: у `4DNFIQWCSCVX` пики в ~1.25 выше, чем у `4DNFISBF7WSJ` при всех вариантах окон.
 
 ## i. создайте 2 bed файла с границами ТАДов; в поле score добавьте силу границы
 С помощью кода 
