@@ -126,3 +126,22 @@ insulation_table2 = insulation(clr2, windows, verbose=True)
 | ![](https://github.com/akamaaru/hse25_hw4/blob/main/img/4DNFIQWCSCVX/boundaries.png) | ![](https://github.com/akamaaru/hse25_hw4/blob/main/img/4DNFISBF7WSJ/boundaries.png) |
 
 ## i. создайте 2 bed файла с границами ТАДов; в поле score добавьте силу границы
+С помощью кода 
+``` python
+bound1 = boundaries1.rename(columns={'boundary_strength_10000' : 'score'})
+bound2 = boundaries2.rename(columns={'boundary_strength_10000' : 'score'})
+
+bound1 = bound1.drop(['region', 'is_bad_bin',	'log2_insulation_score_10000',	'n_valid_pixels_10000', 'is_boundary_10000'], axis = 1)
+bound2 = bound2.drop(['region', 'is_bad_bin',	'log2_insulation_score_10000',	'n_valid_pixels_10000', 'is_boundary_10000'], axis = 1)
+
+bound1 = bound1.rename(columns={'chrom' : 'Chromosome', 'start' : 'Start', 'end' : 'End'})
+bound2 = bound2.rename(columns={'chrom' : 'Chromosome', 'start' : 'Start', 'end' : 'End'})
+
+bf1 = pybed.BedFrame.from_frame(meta = ['Chromosome', 'Start', 'End', 'Score'], data=bound1)
+bf2 = pybed.BedFrame.from_frame(meta = ['Chromosome', 'Start', 'End', 'Score'], data=bound2)
+
+bf1.to_file('tads1.bed')
+bf2.to_file('tads2.bed')
+```
+были созданы два файла -- `tads1.bed` и `tads2.bed`, содержащие информацию о ТАДах файлов `4DNFIQWCSCVX` и `4DNFISBF7WSJ` соответственно. 
+Оба этих файла содержатся в папке `data`.
