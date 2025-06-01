@@ -106,5 +106,13 @@ chr4	20000000	20005000	chr4	20040000	20045000	2	0.00211754
 - **4DNFISBF7WSJ** -- низкая контактная частота при маленьких расстояниях; высокая контактная частота при больших расстояниях
 
 ## g. для выбранного участка найдите `insulation score` и границы ТАДов для обоих файлов
+Для находждения `insulation score` был запущен следующий код:
+``` python
+windows = [2 * resolution, 3 * resolution, 5 * resolution]
+
+insulation_table1 = insulation(clr1, windows, verbose=True)
+insulation_table2 = insulation(clr2, windows, verbose=True)
+```
+
 ## h. сравните результаты и постройте графики полученных кривых; отобразите на них границы ТАДов
 ## i. создайте 2 bed файла с границами ТАДов; в поле score добавьте силу границы
